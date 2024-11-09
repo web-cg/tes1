@@ -1,20 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
-  --base-clr: #11121a;
+ 
   --line-clr: #42434a;
-  --hover-clr: #222533;
-  --text-clr: #e6e6ef;
+  --hover-clr: #e100ff;
+  --text-clr: #fff;
   --accent-clr: #5e63ff;
-  --secondary-text-clr: #b6aeae;
+  --secondary-text-clr: #9b9c9e;
   --accent-clr-dark: #5b5b6a;
 }
-
 *{
   margin: 0;
   padding: 0;
 }
 
+.textGosp {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /*
+:root{
+  --base-clr: #ffffff;
+  --line-clr: #42434a;
+  --hover-clr: #222533;
+  --text-clr: #000000;
+  --accent-clr: #5e63ff;
+  --secondary-text-clr: #000000;
+  --accent-clr-dark: #0400ff;
+}
   .darkmode{
     --base-clr: #11121a;
     --line-clr: #42434a;
@@ -26,13 +38,9 @@
   }
 */
 
-
-
 /*----------------------------------------------------------------------------------------------*/
 
-
-
-
+/*
 button{
   border: none;
   padding: .8em 2em;
@@ -72,13 +80,13 @@ button{
 .darkmode #theme-switch svg:last-child{
   display: block;
 }
-
-
-
+*/
 
 /*----------------------------------------------------------------------------------------------*/
 
-
+.sansserif{
+  font-family: sans-serif;
+}
 
 
 html{
@@ -92,6 +100,11 @@ body{
   color: var(--text-clr);
   display: grid;
   grid-template-columns: auto 1fr;
+
+  background-image: url('background.png'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
 }
 #sidebar{
   box-sizing: border-box;
@@ -203,14 +216,26 @@ main p{
   margin-top: 5px;
   margin-bottom: 15px;
 }
+
+
 .container{
   border: 1px solid var(--line-clr);
-  border-radius: 1em;
+  border-radius: ;
   margin-bottom: 20px;
   padding: min(3em, 15%);
+  background-color: #fff;
+  opacity: 0.7;
+  padding: 20px;
+  margin-bottom: 10px;
 
   h2, p { margin-top: 1em }
 }
+
+
+.container p {
+margin: 0;
+}
+
 
 @media(max-width: 800px){
   body{
@@ -321,4 +346,58 @@ main p{
   color: var(--accent-clr-dark);
 
   text-decoration: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#inputSection {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+#textInput {
+  padding: 8px;
+  font-size: 16px;
+  flex: 1;
+}
+
+#addButton {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+
+.centright {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50% -50%);
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+#containerArea {
+  margin-top: 20px; /* Abstand von anderen Elementen */
+  padding: 10px;
+  max-width: 100%; /* Optional: Begrenze die Breite */
+  overflow: auto; /* Verhindert, dass es den Inhalt darüber hinaus ausdehnt */
+}
+
+#containerArea .container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
 }
