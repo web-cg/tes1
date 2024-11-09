@@ -31,8 +31,10 @@ function closeAllSubMenus(){
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------
 
+
+//---------------------------------------------------------------------------------------------------------------------------
+/*
 let darkmode = localStorage.getItem('darkmode')
 const themeSwitch = document.getElementById('theme-switch')
 
@@ -52,3 +54,23 @@ themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem('darkmode')
   darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
+*/
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+document.getElementById('addButton').addEventListener('click', function() {
+  const textInput = document.getElementById('textInput').value;
+  if (textInput.trim() !== '') {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('container');
+    newDiv.textContent = textInput;
+
+    // Füge den neuen Container oben im #containerArea hinzu
+    const containerArea = document.getElementById('containerArea');
+    containerArea.insertBefore(newDiv, containerArea.firstChild);
+
+    document.getElementById('textInput').value = ''; // Eingabefeld leeren
+  } else {
+    alert('Bitte gib einen Text ein.');
+  }
+});
